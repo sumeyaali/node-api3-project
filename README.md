@@ -50,6 +50,7 @@ Follow these steps for completing your project.
   - if the request `body` is missing the required `name` field, cancel the request and respond with status `400` and `{ message: "missing required name field" }`
 
 - `validatePost()`
+
   - `validatePost` validates the `body` on a request to create a new post
   - if the request `body` is missing, cancel the request and respond with status `400` and `{ message: "missing post data" }`
   - if the request `body` is missing the required `text` field, cancel the request and respond with status `400` and `{ message: "missing required text field" }`
@@ -58,9 +59,12 @@ Follow these steps for completing your project.
 
 There are two helper files that you can use to manage the persistence of _users_ and _posts_ data. These files are `users/userDb.js` and `posts/postDb.js`. Both files publish the following api:
 
-- `get()`: calling find returns a promise that resolves to an array of all the `resources` contained in the database.
-- `getById()`: takes an `id` as the argument and returns a promise that resolves to the `resource` with that id if found.
+- `get()`: calling find returns a promise that resolves to an array of all the `resources` contained in the database. [COMPLETE]
+
+- `getById()`: takes an `id` as the argument and returns a promise that resolves to the `resource` with that id if found. [COMPLETE]
+
 - `insert()`: calling insert passing it a `resource` object will add it to the database and return the new `resource`.
+
 - `update()`: accepts two arguments, the first is the `id` of the `resource` to update and the second is an object with the `changes` to apply. It returns the count of updated records. If the count is 1 it means the record was updated correctly.
 - `remove()`: the remove method accepts an `id` as it's first parameter and, upon successfully deleting the `resource` from the database, returns the number of records deleted.
 
